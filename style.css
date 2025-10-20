@@ -1,70 +1,132 @@
-/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
+    padding: 0 20px;
 }
 
 .card {
     background: white;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-#alert-form input, #alert-form button {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
+/* --- Estilos do Formulário --- */
 #alert-form {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap; /* Responsividade básica */
+    gap: 15px;
+    flex-wrap: wrap; 
 }
 
 #alert-form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
     flex-grow: 1;
-    min-width: 150px;
+    min-width: 250px; /* Garante que os campos não fiquem muito pequenos */
 }
 
+#alert-form button {
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#alert-form button:hover {
+    background-color: #27ae60;
+}
+
+/* --- Estilos da Tabela --- */
 #alert-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
 #alert-table th, #alert-table td {
-    padding: 12px;
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #eee;
+    vertical-align: middle;
 }
 
-/* Estilos de Status (Badge) */
+#alert-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Links dentro da tabela */
+#alert-table td a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#alert-table td a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos de Status (Badge) --- */
 .status-badge {
-    padding: 5px 8px;
-    border-radius: 12px;
-    font-size: 0.8em;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
     font-weight: bold;
     display: inline-block;
 }
 
 .alert-watching {
-    background-color: #f0f8ff; /* Azul claro */
+    background-color: #f0f8ff; 
     color: #007bff;
     border: 1px solid #007bff;
 }
 
 .alert-active {
-    background-color: #ffe0e0; /* Vermelho claro */
+    background-color: #ffe0e0; 
     color: #dc3545;
     border: 1px solid #dc3545;
     animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    #alert-form {
+        flex-direction: column;
+    }
+    #alert-form input, #alert-form button {
+        min-width: 100%;
+        margin-right: 0;
+    }
+    #alert-table th, #alert-table td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
 }
