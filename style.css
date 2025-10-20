@@ -1,0 +1,70 @@
+/* style.css */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#alert-form input, #alert-form button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#alert-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Responsividade básica */
+}
+
+#alert-form input {
+    flex-grow: 1;
+    min-width: 150px;
+}
+
+#alert-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#alert-table th, #alert-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilos de Status (Badge) */
+.status-badge {
+    padding: 5px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.alert-watching {
+    background-color: #f0f8ff; /* Azul claro */
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.alert-active {
+    background-color: #ffe0e0; /* Vermelho claro */
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

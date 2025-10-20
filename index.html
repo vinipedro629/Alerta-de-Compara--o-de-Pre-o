@@ -1,0 +1,30 @@
+<main class="container">
+    <h1>Comparador de Preços (Simulado)</h1>
+
+    <section class="card">
+        <h2>Criar Novo Alerta</h2>
+        <form id="alert-form">
+            <input type="text" id="product-id" placeholder="ID do Produto (ex: fone-x)" required>
+            <input type="number" id="target-price" placeholder="Preço Alvo (R$)" step="0.01" min="1" required>
+            <button type="submit">Cadastrar Alerta</button>
+        </form>
+    </section>
+
+    <section class="card alert-list">
+        <h2>Meus Alertas</h2>
+        <table id="alert-table">
+            <thead>
+                <tr>
+                    <th>Produto ID</th>
+                    <th>Alvo</th>
+                    <th>Último Preço</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="alert-table-body">
+                </tbody>
+        </table>
+        <p id="no-alerts-msg" style="text-align: center; color: #888; margin-top: 20px;">Nenhum alerta cadastrado.</p>
+    </section>
+</main>
+<script src="app.js"></script>
